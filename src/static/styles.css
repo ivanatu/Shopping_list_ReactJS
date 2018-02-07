@@ -1,0 +1,161 @@
+body {
+  margin:0;
+  padding:0;
+/* background: url(./images/image.jpg) no-repeat center center fixed; */
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+
+.form-background {   
+background: rgba(255, 255, 255, .3)
+}
+
+
+.media {
+background: transparent;
+}
+
+
+.navbar {    
+background: #1a768bab;
+}
+
+
+.mr-auto.navbar-brand{
+  color: #fff;
+}
+
+.new_list_background {
+
+    
+background: rgba(168, 143, 255, .2);
+    
+margin-top: 100px;
+}
+
+
+.items{  
+margin-top: 100px;
+
+}
+
+
+* {
+box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+body {
+font-family: Arial;
+/*! background-color: #cbe2f2; */
+padding: 50px;
+}
+.login {
+  color: white;
+margin: 20px auto;
+width: 300px;
+}
+.login-screen {
+background-color: #1892a2;
+padding: 20px;
+margin-top: 5em;
+border-radius: 5px;
+padding-bottom: 0.5em;
+}
+
+.app-title {
+text-align: center;
+color: #777;
+}
+
+.login-form {
+text-align: center;
+}
+.control-group {
+margin-bottom: 10px;
+}
+
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+input:focus {
+border: 2px solid rgb(225, 228, 230);
+box-shadow: none;
+}
+
+.btn {
+  border: 1px solid #00000066;
+  background: #dee2e6;
+  color: #3d9683;
+  font-size: 16px;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: #2980B9;
+}
+
+.login-link {
+  font-size: 16px;
+  color: #444;
+  display: block;
+	margin-top: 12px;
+}
+footer{
+  background:#49aaaf
+}
+
+h2.text-capitalize.card-title.mt-5, .signupForm label {
+  color: #01060c;
+}
+.col{
+  background: rgba(220, 53, 69, 0);
+border-radius: 5px;
+padding-bottom: 0.5em;
+}
+
+h1{
+color: rgb(255, 255, 255)
+}
+
+.react-confirm-alert h1 {
+  color: red;
+}
+
+.react-confirm-alert {
+  background-color: #54ad6ca1 !important;
+}
+
+body {
+  padding-top: 80px;
+  
+  color: #080808;
+}
+
+a {
+  color: #f8f9fa;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
