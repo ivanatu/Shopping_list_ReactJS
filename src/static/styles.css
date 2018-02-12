@@ -19,10 +19,9 @@ background: transparent;
 }
 
 
-.navbar {    
-background: #1a768bab;
+.navbar {
+  background: #17a2b8;
 }
-
 
 .mr-auto.navbar-brand{
   color: #fff;
@@ -127,7 +126,7 @@ footer{
 }
 
 h2.text-capitalize.card-title.mt-5, .signupForm label {
-  color: #01060c;
+  color: #f8f9fa;
 }
 .col{
   background: rgba(220, 53, 69, 0);
@@ -150,7 +149,7 @@ color: rgb(255, 255, 255)
 body {
   padding-top: 80px;
   
-  color: #080808;
+  color: #488fd6;;
 }
 
 a {
@@ -158,4 +157,24 @@ a {
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+}
+
+span.navbar-text.ml-auto {
+  color: black;
+}
+
+i.fa.fa-edit {
+  color: #1b961b;
+}
+
+i.fa.fa-trash {
+    color: red;
+}
+
+i.fa.fa-bars {
+  color: blue;
+}
+
+i.fa.fa-search {
+  color: #195026;
 }
