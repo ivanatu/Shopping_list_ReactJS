@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/ivanatu/Shopping_list_ReactJS.svg?branch=master)](https://travis-ci.org/ivanatu/Shopping_list_ReactJS)
 
+
+[![Coverage Status](https://coveralls.io/repos/github/ivanatu/Shopping_list_ReactJS/badge.svg)](https://coveralls.io/github/ivanatu/Shopping_list_ReactJS)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
