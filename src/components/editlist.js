@@ -1,49 +1,81 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {notify} from 'react-notify-toast';
 
 class EditList extends Component{
+
+    constructor(props) {
+        super(props)
+  
+        this.state = {
+            name:'',
+        };
+    }
+    
+    componentDidMount(){
+        this.setState({
+            name: this.props.listName,
+        })
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
        
-        const {match: {params}} = this.props;
-        const listId = params.listId;
-        axios.put(`http://localhost:5000/shoppinglists/${listId}`,{list:event.target.list.value}, {headers: { 'Authorization': localStorage.getItem("TK") }})
+        const {listId, listName} = this.props;
+        axios.put(`http://localhost:5000/shoppinglists/${listId}`,{list:this.state.name}, {headers: { 'Authorization': localStorage.getItem("TK") }})
           .then( (response) =>{
               console.log(response);
               console.log(response.data.list);
-               this.props.history.push("/dashboard")
             
+            document.querySelector(`#close${this.props.listId}`).click();
+            this.props.getLists();
+            notify.show(response.data.message,"success", 4000);
+            // this.props.history.push('/dashboard')
           })
           .catch(function (error) {
-            console.log(error);
-          });
+            if(error.response){
+              const { data:{message} } = error.response;
+              notify.show(message, 'error', 5000)
+          }
+          }); 
         
+    }
+
+    handleChange = (event)=>{
+        const { value} = event.target;
+        this.setState({
+            name: value,
+        })
     }
     render(){
         return(
              <div>
-             <div className="container">
-             <div className="row">
-                  <div className="container new_list_background card col-6" >
-                     <h2 className="text-capitalize card-title mt-1">EDIT LIST NAME </h2>
-                    <form method="POST" className="form-horizontal" onSubmit={this.handleSubmit}>
-                             <div className="form-group">
-                                 Enter new list name:
-                                     <input type="text" name ="list" className="form-control" id="item"/>
-                             </div>
-             
-                     
-                             <div className="form-group">
-                                 <div>
-                                     <button className="btn btn-info " type="submit">Save Changes</button>
-                                
-                                 </div>
-                             </div>
-                    </form>
-                </div>
-                </div>
-                </div>
+            
+             <div id={`myModall${this.props.listId}`} className="modal" role="dialog">
+             <div className="modal-dialog">
+               <div className="modal-content">
+                 <div className="modal-header">
+                 <h4>Edit List</h4>
+                   <button type="button" className="close" id={`close${this.props.listId}`} data-dismiss="modal">&times;</button>
+                 
+                 </div>
+                 <div className="modal-body">
+                 <form  method="POST"  name="login_form" className="register-form" onSubmit={this.handleSubmit}>
+                 
+                  <div className="form-group">
+                      NEW LIST NAME:
+                          <input type="text" className="form-control" name="list" value={this.state.name} onChange={this.handleChange} required/>   
+                  </div>
+        
+                          <button className="btn btn-info " type="submit">Save List</button>
+                                     
+                   </form>
+                 </div>
+                 
+               </div>
+           
+           </div>
+        </div>
              </div>
         );
     }
