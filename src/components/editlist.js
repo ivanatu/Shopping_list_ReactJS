@@ -3,7 +3,8 @@ import axios from 'axios';
 import {notify} from 'react-notify-toast';
 
 class EditList extends Component{
-
+   
+    //intializing the state
     constructor(props) {
         super(props)
   
@@ -17,12 +18,13 @@ class EditList extends Component{
             name: this.props.listName,
         })
     }
-
+   
+    //handling the submit for editing a shopping list
     handleSubmit = (event) => {
         event.preventDefault();
        
-        const {listId, listName} = this.props;
-        axios.put(`http://localhost:5000/shoppinglists/${listId}`,{list:this.state.name}, {headers: { 'Authorization': localStorage.getItem("TK") }})
+        const {listId} = this.props;
+        axios.put(`/shoppinglists/${listId}`,{list:this.state.name}, {headers: { 'Authorization': localStorage.getItem("TK") }})
           .then( (response) =>{
               console.log(response);
               console.log(response.data.list);
@@ -30,7 +32,7 @@ class EditList extends Component{
             document.querySelector(`#close${this.props.listId}`).click();
             this.props.getLists();
             notify.show(response.data.message,"success", 4000);
-            // this.props.history.push('/dashboard')
+    
           })
           .catch(function (error) {
             if(error.response){
@@ -40,7 +42,8 @@ class EditList extends Component{
           }); 
         
     }
-
+   
+    //setting a new state for the shopping list name
     handleChange = (event)=>{
         const { value} = event.target;
         this.setState({
