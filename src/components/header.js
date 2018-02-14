@@ -4,7 +4,7 @@ import { Link} from 'react-router-dom'
 
 class Header extends Component{
     
-
+    //this function handles the logout by removing the token
     OnLogout(){
         console.log(localStorage.getItem("TK"));
         localStorage.removeItem("TK")
@@ -13,6 +13,7 @@ class Header extends Component{
         );
       }
 
+    //rending the navigation bar with the login, register, home, and logout links
     render(){
         return(
            
@@ -27,7 +28,7 @@ class Header extends Component{
                                 
                                 { localStorage.getItem("TK") ?
                                 <div>
-                                <Link to="/dashboard"><i className="fa fa-home" />  Home   </Link>
+                                <Link to="/list"><i className="fa fa-home" />  Home   </Link>
                                 <Link to="/login" onClick={this.OnLogout}><i className="fa fa-sign-in" />  Logout  </Link></div>
                                 :
                                 <div>
@@ -40,9 +41,7 @@ class Header extends Component{
                     </div>
                 </div>
             </nav>
-            
-            </div>
-               
+            </div>     
         );
     }
 }
