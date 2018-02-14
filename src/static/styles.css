@@ -178,3 +178,8 @@ i.fa.fa-bars {
 i.fa.fa-search {
   color: #195026;
 }
+
+h2, .h2 {
+  font-size: 2rem;
+  color: #980d1b;
+}
