@@ -3,6 +3,7 @@ import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert'; 
 import { toast} from 'react-toastify';
 import EditList from './editlist'
+import Addlist from './addlist'
 import {notify} from 'react-notify-toast';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
@@ -14,24 +15,21 @@ class List extends Component{
 
         this.state = {
         list: [],
-        isEditing: false,
         activePage: 1,
         data:[],
         pageNumbers:[],
         showMessage:false, 
+        search:false,
+        searched:'',
         q:'', 
         page:1, 
-        has_next:false, 
-        next_page:'',
-        previous_page:'', 
-        disablePrevious:'', 
-        disableNext:'',
         // url: url+'?page=1',
         pages:null,
         per_page: '',
-        total: ''
+        total: '',
         };
     }
+
     
     onDeleteClick = (listId, listName)  => {
         confirmAlert({
@@ -44,7 +42,7 @@ class List extends Component{
     };
 
     onListDelete = (listId) => {
-        axios.delete(`http://localhost:5000/shoppinglists/${listId}`, {
+        axios.delete(`/shoppinglists/${listId}`, {
             headers: {
                'Authorization': localStorage.getItem("TK")
             }
@@ -52,24 +50,30 @@ class List extends Component{
         .then(response => {
             toast.success(response.data.message)
             // reload items state after delete
-            this.props.history.push('/dashboard')
+            notify.show(response.data.message, "error", 4000)
+            this.fetchLists();
         })
         .catch(error => {
         })
     }
 
-    handleSearch = (event) => {
+    handleSearch = (event, numbers) => {
         event.preventDefault();
        const search = event.target.search.value
        console.log("KABDKAJBSKDAKJSBD", search)
-        axios.get(`http://localhost:5000/shoppinglists?q=${search}`,{headers: { 'Authorization': localStorage.getItem("TK") }})
+       this.setState({searched: search});
+        axios.get(`/shoppinglists?q=${search}&page=${numbers}`,{headers: { 'Authorization': localStorage.getItem("TK") }})
           .then( (response) =>{
-             const list = response.data;
-              this.setState({list})
-            
-               console.log('list hrere',list)
-              this.props.history.push("/dashboard")
-            
+             this.setState({
+                list: response.data,
+                per_page: response.data.lists[0].per_page,
+                total: response.data.lists[0].total,
+                showMessage:false,
+                search:true,
+                pages: response.data.count,
+                });
+
+                notify.show(response.data.message, "success", 4000)
           })
           .catch(function (error) {
             if(error.response){
@@ -80,12 +84,12 @@ class List extends Component{
         }
 
     fetchLists = ()=>{
-            axios.get(`http://localhost:5000/shoppinglists`, {
+            axios.get(`/shoppinglists`, {
             headers: { 'Authorization': localStorage.getItem("TK") }
         })
         .then(response => {
-            console.log(response)
-            console.log(response.data.count)
+            // console.log(response)
+            // console.log(response.data.count)
             this.setState({
             list: response.data,
             per_page: response.data.lists[0].per_page,
@@ -93,7 +97,7 @@ class List extends Component{
             showMessage:false,
             pages: response.data.count,
             });
-            
+            notify.show(response.data.message, "success", 4000)
         })
         .catch(function (error) {
             if(error.response){
@@ -109,16 +113,17 @@ class List extends Component{
 
     handleClick(number){
         // if (this.state.next_page)
-        axios.get(`http://localhost:5000/shoppinglists?page=${number}`, {
+        console.log("i tried this and it worked ");
+        axios.get(`/shoppinglists?page=${number}`, {
             headers: { 'Authorization': localStorage.getItem("TK") }
         })
         .then((response)=>{
-            console.log(response.data)
+            // console.log(response.data)
             this.setState({
             list: response.data,
             showMessage:false,
             });
-
+            
         })
         .catch(function (error) {
             if(error.response){
@@ -128,11 +133,34 @@ class List extends Component{
           }); 
     };
 
+    handleClicks = (event, numbers) => {
+        console.log("i tried this ");
+          event.preventDefault();
+          const search = this.state.searched
+        
+        axios.get(`/shoppinglists?q=${search}&page=${numbers}`, {
+            headers: { 'Authorization': localStorage.getItem("TK") }
+        })
+        .then((response)=>{
+            // console.log(response.data)
+            this.setState({
+            list: response.data,
+            showMessage:false,
+            });
+            
+        })
+        .catch(function (error) {
+            if(error.response){
+              const { data:{message} } = error.response;
+              notify.show(message, 'error', 5000)
+          }
+          }); 
+    };
 
     render () {
         
-        console.log(this.state.per_page);
-        const {list, per_page, total}=this.state
+        // console.log(this.state.per_page);
+        const { per_page, total}=this.state
         let loadPagination;
         const pageNumbers = [];
        if(total > 8){
@@ -143,9 +171,18 @@ class List extends Component{
            pageNumbers.push(1);
        }
     
-       <div className="col-xs-11 col-sm-3 pull-right">
-        {
-            list?(
+      
+        if(this.state.search===true){
+            loadPagination = 
+            pageNumbers.map((numbers) => {
+            return(
+                <li className="page-item" key={numbers} style={{display: 'inline-block'}}>
+                <a className="page-link" onClick={event => this.handleClicks(event, numbers)} key={numbers} id={numbers}>{numbers}</a>
+                </li> 
+            );  
+            })   
+        }
+        else{
             loadPagination = 
             pageNumbers.map((number) => {
             return(
@@ -153,33 +190,29 @@ class List extends Component{
                 <a className="page-link" onClick={() => this.handleClick(number)} key={number} id={number}>{number}</a>
                 </li> 
             );  
-    }))
-       :null
+            })   
         }
-        </div>
-       
-   
+
         return (
            <div>
            <button type="button" className="btn btn-success" data-toggle="modal" data-target="#myModal">Add List</button>
+           <Addlist getLists={this.fetchLists}/>
 
             <div className="form-inline align-content">
-            <form className="form-inline align-content" onSubmit = {this.handleSearch}>
+            <form className="form-inline align-content" onSubmit = {event => this.handleSearch(event, 1)}>
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" required/>
-           
             <button  type="submit"><i className="fa fa-search"></i></button>
             </form>
             </div>
             
         <div className='container'>
-
         <table className="table table-hover table-striped">
-        <thead>
-        <tr>
-                    <th colSpan="2">SHOPPING LIST</th>
-                    <th colSpan="10">ACTION</th>
-        </tr>
-     </thead> 
+            <thead>
+            <tr>
+                <th colSpan="2">SHOPPING LIST</th>
+                <th colSpan="10">ACTION</th>
+            </tr>
+             </thead> 
      <tbody> 
                 {  
                 this.state.list.lists?
@@ -187,32 +220,29 @@ class List extends Component{
                     return (          
             
          <tr key={list.id}>             
-                        <td>{list.list}</td>
-                        <td><i className="fa fa-edit" data-toggle="modal" data-target={`#myModall${list.id}`}></i></td>
-                        <td><i className="fa fa-trash" onClick = {() => this.onDeleteClick(list.id, list.list)}></i></td>
-                        <td><i className="fa fa-bars" onClick = {() => this.onListClick(list.id)}></i></td>
-                        <EditList listId={list.id} listName={list.list} getLists={this.fetchLists}/>
+                <td>{list.list}</td>
+                <td><i className="fa fa-edit" data-toggle="modal" data-target={`#myModall${list.id}`}></i></td>
+                <td><i className="fa fa-trash" onClick = {() => this.onDeleteClick(list.id, list.list)}></i></td>
+                <td><i className="fa fa-bars" onClick = {() => this.onListClick(list.list, list.id)}></i></td>
+                <EditList listId={list.id} listName={list.list} getLists={this.fetchLists}/> 
                     
         </tr>
-         
-                    ); 
-                   
+                    );    
                 }))
-
                 : null
                 }
-                </tbody> 
+    </tbody> 
             </table>
             <ul className="pagination justify-content-center">
-           {loadPagination}
-           </ul>
+            {loadPagination}
+            </ul>
         </div>
         </div>
         );
     }
 
-    onListClick = (listId) =>{
-        this.props.history.push(`/items/${listId}`)
+    onListClick = (listName, listId) =>{
+        this.props.history.push(`/${listName}/${listId}/items`)
     }
     
     
