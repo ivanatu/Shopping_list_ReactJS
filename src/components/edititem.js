@@ -4,7 +4,7 @@ import {notify} from 'react-notify-toast';
 
 class EditItem extends Component{
     
-
+//intialize state
     constructor(props) {
         super(props)
   
@@ -14,6 +14,7 @@ class EditItem extends Component{
         };
     }
 
+
     componentDidMount(){
         this.setState({
             name: this.props.itemName,
@@ -21,19 +22,20 @@ class EditItem extends Component{
         })
     }
 
+    //handling the submit the updating the shopping list item
     handleSubmit = (event) => {
         event.preventDefault();
        
         const {listId, itemId, itemName} = this.props;
-        axios.put(`http://localhost:5000/shoppinglists/${listId}/items/${itemId}`,
+        axios.put(`/shoppinglists/${listId}/items/${itemId}`,
         {name:this.state.name, price:this.state.price}, 
         {headers: { 'Authorization': localStorage.getItem("TK") }})
           .then( (response) =>{
-              console.log(response);
-              console.log(response.data.name);
+            console.log(response);
             document.querySelector(`#close${this.props.itemId}`).click();
             this.props.getItems();
             notify.show(response.data.message,"success", 4000);
+            
             
           })
           .catch(function (error) {
@@ -44,18 +46,12 @@ class EditItem extends Component{
           }); 
         
     }
-
-    handleNameChange = (event)=>{
-        const { value} = event.target;
+   
+    //setting the new state for the price of the item
+    handleChange = (event)=>{
+        const { value,name} = event.target;
         this.setState({
-            name: value,
-        })
-    }
-
-    handlePriceChange = (event)=>{
-        const { value} = event.target;
-        this.setState({
-            price: value,
+           [name]: value,
         })
     }
 
@@ -76,12 +72,12 @@ class EditItem extends Component{
                 
                  <div className="form-group">
                      NEW ITEM NAME:
-                         <input type="text" className="form-control" name="item" value={this.state.name} onChange={this.handleNameChange} required/>   
+                         <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.handleChange} required/>   
                  </div>
 
                  <div className="form-group">
                      NEW ITEM PRICE:
-                     <input type="text" className="form-control" name="price" value={this.state.price} onChange={this.handlePriceChange} required min="0" step="1"/>  
+                     <input type="text" className="form-control" name="price" value={this.state.price} onChange={this.handleChange} required min="0" step="1"/>  
                  </div>
        
                          <button className="btn btn-info " type="submit">Save Item</button>
