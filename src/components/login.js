@@ -5,9 +5,10 @@ import {notify} from 'react-notify-toast';
 
 class Login extends Component{
 
+ //handle submit for login with axios post
 handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(`http://localhost:5000/auth/login`, {
+    axios.post(`/auth/login`, {
         'email'    : event.target.email.value,
         'password': event.target.password.value
         })
@@ -15,7 +16,7 @@ handleSubmit = (event) => {
             console.log(response);
             console.log(response.data.token)
             localStorage.setItem("TK", response.data.token)
-            this.props.history.push("/dashboard")
+            this.props.history.push("/list")
             notify.show(response.data.message, 'success', 500)
             
         })
