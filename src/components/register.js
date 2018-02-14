@@ -35,7 +35,7 @@ handleSubmit = (event) => {
         return;
     }
     
-    axios.post('http://localhost:5000/auth/register', {
+    axios.post(`/auth/register`, {
         'first_name': event.target.first_name.value,
         'last_name': event.target.last_name.value,
         'email'    : event.target.email.value,
