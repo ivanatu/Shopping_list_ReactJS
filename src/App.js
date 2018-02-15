@@ -15,7 +15,8 @@ import Notifications from 'react-notify-toast'
 import { Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 
-axios.defaults.baseURL=`http://localhost:5000`;
+// axios.defaults.baseURL=`http://localhost:5000`;
+axios.defaults.baseURL=`https://shopping-listapi.herokuapp.com/`
 class App extends Component {
 
   render() {
