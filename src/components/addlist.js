@@ -53,7 +53,7 @@ class Addlist extends Component {
                 <form method="POST" name="login_form" className="register-form" onSubmit={this.handleSubmit}>
                   <div className="form-group">
                     SHOPPING LIST NAME:
-                  <input type="text" className="form-control" name="list" onChange={this.handleChange} value={this.state.name} required />
+                  <input type="text" className="form-control" id="list" name="list" onChange={this.handleChange} value={this.state.name} required />
                   </div>
 
                   <button className="btn btn-info " type="submit">Save List</button>
