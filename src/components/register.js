@@ -101,7 +101,7 @@ render(){
                                     <input type="password" className="form-input form-control" name="c_password" required minLength="8"/>
                                 </div>
                            </div>
-                            <button type='submit'>Submit</button>
+                            <button type='submit' className="btn btn-primary">Submit</button>
                         </div>
                     </div>
                     </form>
