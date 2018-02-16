@@ -1,0 +1,1166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Items/> has a valid snapshot 1`] = `
+<div>
+  <button
+    className="btn btn-success"
+    data-target="#myModal"
+    data-toggle="modal"
+    type="button"
+  >
+    Add Items
+  </button>
+  <div>
+    <div
+      className="modal fade"
+      id="myModal"
+      role="dialog"
+    >
+      <div
+        className="modal-dialog"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h4>
+              Add item
+            </h4>
+            <button
+              className="close"
+              data-dismiss="modal"
+              id="close2"
+              type="button"
+            >
+              ×
+            </button>
+          </div>
+          <div
+            className="modal-body"
+          >
+            <form
+              className="register-form"
+              id="create_form"
+              method="POST"
+              name="create_form"
+              onSubmit={[Function]}
+            >
+              <div
+                className="form-group"
+              >
+                NAME:
+                <input
+                  className="form-control"
+                  id="name"
+                  name="name"
+                  onChange={[Function]}
+                  required={true}
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                PRICE:
+                <input
+                  className="form-control"
+                  id="name"
+                  name="price"
+                  onChange={[Function]}
+                  required={true}
+                  type="text"
+                  value=""
+                />
+              </div>
+              <button
+                className="btn btn-info "
+                type="submit"
+              >
+                Save Item
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="itemsheader"
+  >
+    <h2>
+      test
+      's items
+    </h2>
+  </div>
+  <div
+    className="form-inline align-content"
+  >
+    <form
+      className="form-inline align-content"
+      onSubmit={[Function]}
+    >
+      <input
+        aria-label="Search"
+        className="form-control mr-sm-2"
+        min="0"
+        name="search"
+        placeholder="Search"
+        required={true}
+        step="1"
+        type="search"
+      />
+      <button
+        type="submit"
+      >
+        <i
+          className="fa fa-search"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    className="container"
+  >
+    <table
+      className="table table-hover table-striped"
+    >
+      <thead>
+        <tr>
+          <th>
+            ITEM
+          </th>
+          <th>
+            PRICE
+          </th>
+          <th
+            colSpan="4"
+          >
+            ACTION
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+  <ul
+    className="pagination justify-content-center"
+  >
+    <li
+      className="page-item"
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
+    >
+      <a
+        className="page-link"
+        id={1}
+        onClick={[Function]}
+      >
+        1
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`<Items/> renders without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Items
+    match={
+      Object {
+        "params": Object {
+          "listId": 4,
+          "listName": "test",
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="btn btn-success"
+          data-target="#myModal"
+          data-toggle="modal"
+          type="button"
+        >
+          Add Items
+        </button>,
+        <Additem
+          getItems={[Function]}
+          listId={4}
+        />,
+        <div
+          className="itemsheader"
+        >
+          <h2>
+            test
+            's items
+          </h2>
+        </div>,
+        <div
+          className="form-inline align-content"
+        >
+          <form
+            className="form-inline align-content"
+            onSubmit={[Function]}
+          >
+            <input
+              aria-label="Search"
+              className="form-control mr-sm-2"
+              min="0"
+              name="search"
+              placeholder="Search"
+              required={true}
+              step="1"
+              type="search"
+            />
+            <button
+              type="submit"
+            >
+              <i
+                className="fa fa-search"
+              />
+            </button>
+          </form>
+        </div>,
+        <div
+          className="container"
+        >
+          <table
+            className="table table-hover table-striped"
+          >
+            <thead>
+              <tr>
+                <th>
+                  ITEM
+                </th>
+                <th>
+                  PRICE
+                </th>
+                <th
+                  colSpan="4"
+                >
+                  ACTION
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>,
+        <ul
+          className="pagination justify-content-center"
+        >
+          <li
+            className="page-item"
+            style={
+              Object {
+                "display": "inline-block",
+              }
+            }
+          >
+            <a
+              className="page-link"
+              id={1}
+              onClick={[Function]}
+            >
+              1
+            </a>
+          </li>
+        </ul>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add Items",
+          "className": "btn btn-success",
+          "data-target": "#myModal",
+          "data-toggle": "modal",
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Add Items",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "getItems": [Function],
+          "listId": 4,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h2>
+            test
+            's items
+          </h2>,
+          "className": "itemsheader",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "test",
+              "'s items",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "test",
+            "'s items",
+          ],
+          "type": "h2",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            className="form-inline align-content"
+            onSubmit={[Function]}
+          >
+            <input
+              aria-label="Search"
+              className="form-control mr-sm-2"
+              min="0"
+              name="search"
+              placeholder="Search"
+              required={true}
+              step="1"
+              type="search"
+            />
+            <button
+              type="submit"
+            >
+              <i
+                className="fa fa-search"
+              />
+            </button>
+          </form>,
+          "className": "form-inline align-content",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                aria-label="Search"
+                className="form-control mr-sm-2"
+                min="0"
+                name="search"
+                placeholder="Search"
+                required={true}
+                step="1"
+                type="search"
+              />,
+              <button
+                type="submit"
+              >
+                <i
+                  className="fa fa-search"
+                />
+              </button>,
+            ],
+            "className": "form-inline align-content",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "Search",
+                "className": "form-control mr-sm-2",
+                "min": "0",
+                "name": "search",
+                "placeholder": "Search",
+                "required": true,
+                "step": "1",
+                "type": "search",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <i
+                  className="fa fa-search"
+                />,
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fa fa-search",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <table
+            className="table table-hover table-striped"
+          >
+            <thead>
+              <tr>
+                <th>
+                  ITEM
+                </th>
+                <th>
+                  PRICE
+                </th>
+                <th
+                  colSpan="4"
+                >
+                  ACTION
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>,
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <thead>
+                <tr>
+                  <th>
+                    ITEM
+                  </th>
+                  <th>
+                    PRICE
+                  </th>
+                  <th
+                    colSpan="4"
+                  >
+                    ACTION
+                  </th>
+                </tr>
+              </thead>,
+              <tbody />,
+            ],
+            "className": "table table-hover table-striped",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <tr>
+                  <th>
+                    ITEM
+                  </th>
+                  <th>
+                    PRICE
+                  </th>
+                  <th
+                    colSpan="4"
+                  >
+                    ACTION
+                  </th>
+                </tr>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <th>
+                      ITEM
+                    </th>,
+                    <th>
+                      PRICE
+                    </th>,
+                    <th
+                      colSpan="4"
+                    >
+                      ACTION
+                    </th>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "ITEM",
+                    },
+                    "ref": null,
+                    "rendered": "ITEM",
+                    "type": "th",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "PRICE",
+                    },
+                    "ref": null,
+                    "rendered": "PRICE",
+                    "type": "th",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "ACTION",
+                      "colSpan": "4",
+                    },
+                    "ref": null,
+                    "rendered": "ACTION",
+                    "type": "th",
+                  },
+                ],
+                "type": "tr",
+              },
+              "type": "thead",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "tbody",
+            },
+          ],
+          "type": "table",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="page-item"
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            >
+              <a
+                className="page-link"
+                id={1}
+                onClick={[Function]}
+              >
+                1
+              </a>
+            </li>,
+          ],
+          "className": "pagination justify-content-center",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": <a
+                className="page-link"
+                id={1}
+                onClick={[Function]}
+              >
+                1
+              </a>,
+              "className": "page-item",
+              "style": Object {
+                "display": "inline-block",
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": 1,
+                "className": "page-link",
+                "id": 1,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": 1,
+              "type": "a",
+            },
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="btn btn-success"
+            data-target="#myModal"
+            data-toggle="modal"
+            type="button"
+          >
+            Add Items
+          </button>,
+          <Additem
+            getItems={[Function]}
+            listId={4}
+          />,
+          <div
+            className="itemsheader"
+          >
+            <h2>
+              test
+              's items
+            </h2>
+          </div>,
+          <div
+            className="form-inline align-content"
+          >
+            <form
+              className="form-inline align-content"
+              onSubmit={[Function]}
+            >
+              <input
+                aria-label="Search"
+                className="form-control mr-sm-2"
+                min="0"
+                name="search"
+                placeholder="Search"
+                required={true}
+                step="1"
+                type="search"
+              />
+              <button
+                type="submit"
+              >
+                <i
+                  className="fa fa-search"
+                />
+              </button>
+            </form>
+          </div>,
+          <div
+            className="container"
+          >
+            <table
+              className="table table-hover table-striped"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    ITEM
+                  </th>
+                  <th>
+                    PRICE
+                  </th>
+                  <th
+                    colSpan="4"
+                  >
+                    ACTION
+                  </th>
+                </tr>
+              </thead>
+              <tbody />
+            </table>
+          </div>,
+          <ul
+            className="pagination justify-content-center"
+          >
+            <li
+              className="page-item"
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            >
+              <a
+                className="page-link"
+                id={1}
+                onClick={[Function]}
+              >
+                1
+              </a>
+            </li>
+          </ul>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add Items",
+            "className": "btn btn-success",
+            "data-target": "#myModal",
+            "data-toggle": "modal",
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Add Items",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "getItems": [Function],
+            "listId": 4,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h2>
+              test
+              's items
+            </h2>,
+            "className": "itemsheader",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "test",
+                "'s items",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "test",
+              "'s items",
+            ],
+            "type": "h2",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              className="form-inline align-content"
+              onSubmit={[Function]}
+            >
+              <input
+                aria-label="Search"
+                className="form-control mr-sm-2"
+                min="0"
+                name="search"
+                placeholder="Search"
+                required={true}
+                step="1"
+                type="search"
+              />
+              <button
+                type="submit"
+              >
+                <i
+                  className="fa fa-search"
+                />
+              </button>
+            </form>,
+            "className": "form-inline align-content",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <input
+                  aria-label="Search"
+                  className="form-control mr-sm-2"
+                  min="0"
+                  name="search"
+                  placeholder="Search"
+                  required={true}
+                  step="1"
+                  type="search"
+                />,
+                <button
+                  type="submit"
+                >
+                  <i
+                    className="fa fa-search"
+                  />
+                </button>,
+              ],
+              "className": "form-inline align-content",
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-label": "Search",
+                  "className": "form-control mr-sm-2",
+                  "min": "0",
+                  "name": "search",
+                  "placeholder": "Search",
+                  "required": true,
+                  "step": "1",
+                  "type": "search",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i
+                    className="fa fa-search"
+                  />,
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fa fa-search",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                "type": "button",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <table
+              className="table table-hover table-striped"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    ITEM
+                  </th>
+                  <th>
+                    PRICE
+                  </th>
+                  <th
+                    colSpan="4"
+                  >
+                    ACTION
+                  </th>
+                </tr>
+              </thead>
+              <tbody />
+            </table>,
+            "className": "container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <thead>
+                  <tr>
+                    <th>
+                      ITEM
+                    </th>
+                    <th>
+                      PRICE
+                    </th>
+                    <th
+                      colSpan="4"
+                    >
+                      ACTION
+                    </th>
+                  </tr>
+                </thead>,
+                <tbody />,
+              ],
+              "className": "table table-hover table-striped",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <tr>
+                    <th>
+                      ITEM
+                    </th>
+                    <th>
+                      PRICE
+                    </th>
+                    <th
+                      colSpan="4"
+                    >
+                      ACTION
+                    </th>
+                  </tr>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <th>
+                        ITEM
+                      </th>,
+                      <th>
+                        PRICE
+                      </th>,
+                      <th
+                        colSpan="4"
+                      >
+                        ACTION
+                      </th>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "ITEM",
+                      },
+                      "ref": null,
+                      "rendered": "ITEM",
+                      "type": "th",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "PRICE",
+                      },
+                      "ref": null,
+                      "rendered": "PRICE",
+                      "type": "th",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "ACTION",
+                        "colSpan": "4",
+                      },
+                      "ref": null,
+                      "rendered": "ACTION",
+                      "type": "th",
+                    },
+                  ],
+                  "type": "tr",
+                },
+                "type": "thead",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "tbody",
+              },
+            ],
+            "type": "table",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="page-item"
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+              >
+                <a
+                  className="page-link"
+                  id={1}
+                  onClick={[Function]}
+                >
+                  1
+                </a>
+              </li>,
+            ],
+            "className": "pagination justify-content-center",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  className="page-link"
+                  id={1}
+                  onClick={[Function]}
+                >
+                  1
+                </a>,
+                "className": "page-item",
+                "style": Object {
+                  "display": "inline-block",
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "host",
+                "props": Object {
+                  "children": 1,
+                  "className": "page-link",
+                  "id": 1,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": 1,
+                "type": "a",
+              },
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Additem/> has a valid snapshot 1`] = `
+<div>
+  <div
+    className="modal fade"
+    id="myModal"
+    role="dialog"
+  >
+    <div
+      className="modal-dialog"
+    >
+      <div
+        className="modal-content"
+      >
+        <div
+          className="modal-header"
+        >
+          <h4>
+            Add item
+          </h4>
+          <button
+            className="close"
+            data-dismiss="modal"
+            id="close2"
+            type="button"
+          >
+            ×
+          </button>
+        </div>
+        <div
+          className="modal-body"
+        >
+          <form
+            className="register-form"
+            id="create_form"
+            method="POST"
+            name="create_form"
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group"
+            >
+              NAME:
+              <input
+                className="form-control"
+                id="name"
+                name="name"
+                onChange={[Function]}
+                required={true}
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              PRICE:
+              <input
+                className="form-control"
+                id="name"
+                name="price"
+                onChange={[Function]}
+                required={true}
+                type="text"
+                value=""
+              />
+            </div>
+            <button
+              className="btn btn-info "
+              type="submit"
+            >
+              Save Item
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
