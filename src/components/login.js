@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import {Link, Router} from 'react-router-dom'
 import {notify} from 'react-notify-toast';
 
 class Login extends Component{
@@ -48,10 +48,12 @@ return(
                     <input type="password" className="login-field"  placeholder="password" name="password" required/>
                     <label className="login-field-icon fui-lock" htmlFor="login-pass"></label>
                 </div>
-                    <input type="submit" value="submit"/>
+        
+                    <button type='submit' className="btn btn-primary">Submit</button>
                 </form>
+        
                 <Link to="/register"> Register new Account</Link>
-                    
+          
             </div>
                         
          </div>
