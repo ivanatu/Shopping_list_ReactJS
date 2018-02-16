@@ -64,15 +64,15 @@ render(){
                     </div>
 
                 <div className="modal-body">
-                    <form  method="POST"  name="create_form" className="register-form" onSubmit={this.handleSubmit}>
+                    <form  method="POST"  id="create_form" name="create_form" className="register-form" onSubmit={this.handleSubmit}>
                       <div className="form-group">
                           NAME:
-                              <input type="text" className="form-control" name="name" onChange={this.handleChange} value={this.state.name}  required/>   
+                              <input type="text" className="form-control" id="name" name="name" onChange={this.handleChange} value={this.state.name}  required/>   
                       </div>
   
                       <div className="form-group">
                           PRICE:
-                              <input type="text" className="form-control" name="price" onChange={this.handleChange} value={this.state.price}  required/>
+                              <input type="text" className="form-control" id="name" name="price" onChange={this.handleChange} value={this.state.price}  required/>
                       </div>
                               <button className="btn btn-info " type="submit">Save Item</button>               
                     </form>
