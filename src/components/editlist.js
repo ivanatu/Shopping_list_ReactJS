@@ -63,11 +63,11 @@ class EditList extends Component{
                  
                  </div>
                  <div className="modal-body">
-                 <form  method="POST"  name="login_form" className="register-form" onSubmit={this.handleSubmit}>
+                 <form  method="POST"  name="login_form" id="editlist" className="register-form" onSubmit={this.handleSubmit}>
                  
                   <div className="form-group">
                       NEW LIST NAME:
-                          <input type="text" className="form-control" name="list" value={this.state.name} onChange={this.handleChange} required/>   
+                          <input type="text" className="form-control" id="list" name="list" value={this.state.name} onChange={this.handleChange} required/>   
                   </div>
         
                           <button className="btn btn-info " type="submit">Save List</button>
