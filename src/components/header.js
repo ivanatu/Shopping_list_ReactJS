@@ -6,7 +6,7 @@ class Header extends Component{
     
     //this function handles the logout by removing the token
     OnLogout(){
-        console.log(localStorage.getItem("TK"));
+        // console.log(localStorage.getItem("TK"));
         localStorage.removeItem("TK")
         return(
             this.props.history.push("/login")
