@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/ivanatu/Shopping_list_ReactJS.svg?branch=master)](https://travis-ci.org/ivanatu/Shopping_list_ReactJS)
 
+
+[![Build Status](https://travis-ci.org/ivanatu/Shopping_list_ReactJS.svg?branch=ft_creating_components)](https://travis-ci.org/ivanatu/Shopping_list_ReactJS)
 
 [![Coverage Status](https://coveralls.io/repos/github/ivanatu/Shopping_list_ReactJS/badge.svg?branch=ft_creating_components)](https://coveralls.io/github/ivanatu/Shopping_list_ReactJS?branch=ft_creating_components)
 
