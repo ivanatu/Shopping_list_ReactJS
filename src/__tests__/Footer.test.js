@@ -15,6 +15,7 @@ describe('<Footer/>', () => {
     });
     it('renders without crashing', () => {
         shallow(<Footer/>);
+        expect(wrapper).toMatchSnapshot();
     });
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div/>))
