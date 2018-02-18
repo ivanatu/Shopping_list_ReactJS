@@ -7,9 +7,12 @@ import Addlist from '../components/addlist'
 import EditList from '../components/editlist'
 import '../setupTests';
 
+
+
 describe('<List/>', () => {
     
     const wrapper = shallow( <List/> );
+    
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <List/>);
@@ -21,6 +24,15 @@ describe('<List/>', () => {
     });
     it('renders the Items class', () => {
         expect(wrapper.find(".List")).toHaveLength(0);
+    });
+    it('should render <i> without throwing an error', () => {
+        expect(wrapper.exists(<i className="fa fa-edit"  />)).toBe(true)
+    });
+    it('should render <i> without throwing an error', () => {
+        expect(wrapper.exists(<i className="fa fa-trash"  />)).toBe(true)
+    });
+    it('should render <i> without throwing an error', () => {
+        expect(wrapper.exists(<i className="fa fa-bars"  />)).toBe(true)
     });
     it('renders three div jsx elements', () => {
         expect(wrapper.find("div")).toHaveLength(3);        
