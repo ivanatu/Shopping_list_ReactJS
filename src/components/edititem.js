@@ -68,16 +68,16 @@ class EditItem extends Component{
                 
                 </div>
                 <div className="modal-body">
-                <form  method="POST"  name="login_form" className="register-form" onSubmit={this.handleSubmit}>
+                <form  method="POST"  id="edititem" name="login_form" className="register-form" onSubmit={this.handleSubmit}>
                 
                  <div className="form-group">
                      NEW ITEM NAME:
-                         <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.handleChange} required/>   
+                         <input type="text" className="form-control" id="name" name="name" value={this.state.name} onChange={this.handleChange} required/>   
                  </div>
 
                  <div className="form-group">
                      NEW ITEM PRICE:
-                     <input type="text" className="form-control" name="price" value={this.state.price} onChange={this.handleChange} required min="0" step="1"/>  
+                     <input type="text" className="form-control" id="price" name="price" value={this.state.price} onChange={this.handleChange} required min="0" step="1"/>  
                  </div>
        
                          <button className="btn btn-info " type="submit">Save Item</button>
