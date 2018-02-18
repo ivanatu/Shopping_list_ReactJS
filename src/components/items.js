@@ -177,10 +177,9 @@ class Items extends Component{
             // const {match: {params}} = this.props;
             const listId = this.props.match.params.listId;
             const listName = this.props.match.params.listName;
-            const {per_page, total, pages, }=this.state
+            const {per_page, total }=this.state
             let loadPagination;
             const pageNumbers = [];
-            // console.log('pagesssss ', pages)
             if(total > 8){
                 for (let i = 1; i <= Math.ceil(total / per_page); i++) {
                     pageNumbers.push(i);
