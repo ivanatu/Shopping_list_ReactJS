@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 import Header from '../components/header';
 import '../setupTests';
-import {MemoryRouter} from 'react-router-dom'
+import {MemoryRouter, StaticRouter} from 'react-router-dom'
 
 
 describe('<Header/>', () => {
@@ -12,15 +12,13 @@ describe('<Header/>', () => {
     
     it('renders without crashing', () => {
         shallow(<Header/>);
+        expect(wrapper).toMatchSnapshot();
     });
     it('has a valid snapshot', () => { 
         const component = renderer.create(
             <MemoryRouter><Header/></MemoryRouter>); 
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
-    });
-    it('renders with a snapshot', () => {
-        expect(wrapper).toMatchSnapshot();
     });
     it('should render nav without throwing an error', () => {
         expect(wrapper.exists(<nav className="nav bar"/>)).toBe(true)
@@ -39,23 +37,16 @@ describe('<Header/>', () => {
     })
 });
 
-// describe('Header.OnLogout', () => {
-//     const props = {
-//         history : {
-//             push: {
-//                 listId: 4,
-//             }
-//         }
-//     };
-//     it('returns true when called', () => {
-//         const wrapper = shallow(<Header />);
-//         const instance = wrapper.instance();
+describe('Header.OnLogout', () => {
 
-//         // spy on the instance instead of the component
-//         spyOn(instance, 'OnLogout').and.callThrough();
+    it('returns true when called', () => {
+        const wrapper = shallow(<Header/>);
+        const instance = wrapper.instance();
 
-//         expect(instance.OnLogout()).toBe(true);
-//         expect(instance.OnLogout).toHaveBeenCalled();
-//     });
-// });
+        // spy on the instance instead of the component
+        spyOn(instance, 'OnLogout').and.callThrough();
+        // expect(instance.OnLogout).toBe(true);
+       
+    });
+});
 
