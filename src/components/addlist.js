@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Lists from './lists';
 import { notify } from 'react-notify-toast';
 
 class Addlist extends Component {
