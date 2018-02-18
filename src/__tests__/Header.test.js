@@ -4,12 +4,20 @@ import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 import Header from '../components/header';
 import '../setupTests';
+import {MemoryRouter} from 'react-router-dom'
 
 
 describe('<Header/>', () => {
      const wrapper = shallow( <Header/> );
+    
     it('renders without crashing', () => {
         shallow(<Header/>);
+    });
+    it('has a valid snapshot', () => { 
+        const component = renderer.create(
+            <MemoryRouter><Header/></MemoryRouter>); 
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
     });
     it('renders with a snapshot', () => {
         expect(wrapper).toMatchSnapshot();
