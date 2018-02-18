@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 import Items from '../components/items'
 import Additem from '../components/additem'
+import sinon from 'sinon';
 import EditItem from '../components/edititem'
-import '../setupTests';
 
 describe('<Items/>', () => {
+    
     const props = {
         match : {
             params: {
@@ -16,7 +17,8 @@ describe('<Items/>', () => {
             }
         }
     };
-
+   
+    const wrapper = shallow( <Items {...props}/> );
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <Items {...props}/>);
@@ -24,12 +26,13 @@ describe('<Items/>', () => {
         expect(tree).toMatchSnapshot();
     });
     it('renders without crashing', () => {
-        shallow(<Items {...props}/>);
-    });
-    const wrapper = shallow( <Items {...props}/> );
-    
-    it('renders without crashing', () => {
+        render(<Items {...props}/>);
         expect(wrapper).toMatchSnapshot();
+    });
+    it('calls componentWillMount', () => {
+        sinon.spy(Items.prototype, 'componentDidMount');
+        const wrapper = mount(<Items {...props}/>);
+        expect(Items.prototype.componentDidMount.calledOnce).toBe(true);
     });
     it('renders the Items class', () => {
         expect(wrapper.find(".Item")).toHaveLength(0);
