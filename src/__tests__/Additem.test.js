@@ -7,14 +7,14 @@ import moxios from 'moxios';
 import toJson from 'enzyme-to-json';
 import sinon from 'sinon';
 import '../setupTests';
-
     
 
 describe('<Additem/>', () => {
-    const wrapper = shallow( <Additem/> );
+    const wrapper = mount( <Additem/> );
 
     it('renders without crashing', () => {
-        shallow(<Additem/>);
+        render(<Additem/>);
+        expect(wrapper).toMatchSnapshot();
     });
     it('has a valid snapshot', () => {
         const component = renderer.create(
@@ -55,6 +55,14 @@ describe('<Additem/>', () => {
         expect(wrapper.find('name').length).toEqual(0);
         expect(wrapper.find('form').length).toEqual(1);
         expect(wrapper.find('input').length).toEqual(2)
+    });
+    it('input should respond to change event and change the state', () => {
+        wrapper.find('#name').simulate('change', { target: { name: 'name', value: 'apples' } });
+        expect(wrapper.state().name).toEqual('apples')
+    });
+    it('input should respond to change event and change the state', () => {
+        wrapper.find('#price').simulate('change', { target: { name: 'price', value: '20' } });
+        expect(wrapper.state().price).toEqual('20')
     });
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div className="form-group"/>))
