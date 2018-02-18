@@ -4,19 +4,23 @@ import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 import Additem from '../components/additem'
 import moxios from 'moxios';
+import toJson from 'enzyme-to-json';
 import sinon from 'sinon';
 import '../setupTests';
 
+    
+
 describe('<Additem/>', () => {
     const wrapper = shallow( <Additem/> );
+
+    it('renders without crashing', () => {
+        shallow(<Additem/>);
+    });
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <Additem />);
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
-    });
-    it('renders without crashing', () => {
-        shallow(<Additem/>);
     });
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div className="modal"/>))
@@ -32,24 +36,21 @@ describe('<Additem/>', () => {
     });
     it('should render a button', () =>{
         expect(wrapper.find('button').length).toEqual(2)
-    })
+    });
+    it('renders nine div jsx elements', () => {
+        expect(wrapper.find("div")).toHaveLength(8);        
+    });
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div className="modal-body"/>))
     });
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div className="form-group"/>))
     });
-    // it('renders the add item form and submits data', () =>{
-    //     wrapper.setState({name:'mangoes', price:'20'});
-    //     wrapper.find('create_form').simulate('submit', {preventDefault});
-    //     expect(toJson(wrapper)).toMatchSnapshot();
-    //     expect(preventDefault).toBeCalled();
-    // });
-    // it('input should respond to change event and change the state', () => {
-    //     wrapper.find('#name', '#price').simulate('change', { target: { name: 'list', value: 'mangoes',  } });
-    //     expect(wrapper.state().name).toEqual('mangoes')
-    // });
-    
+    it('renders the add item form and submits data', () =>{
+        wrapper.setState({name:'mangoes', price:'20'});
+        wrapper.find('#create_form').simulate('submit', {preventDefault(){}});
+        expect(toJson(wrapper)).toMatchSnapshot();
+    });
     it('render the inputs', () =>{
         expect(wrapper.find('name').length).toEqual(0);
         expect(wrapper.find('form').length).toEqual(1);
@@ -58,6 +59,7 @@ describe('<Additem/>', () => {
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div className="form-group"/>))
     });
+    
 });
 
 describe('add item successfully', () => {
@@ -67,8 +69,6 @@ describe('add item successfully', () => {
     afterEach(function () {
         moxios.uninstall()
     })
-
-    
     it('should add shopping item without throwing an error', () => {
         const wrapper = shallow(<Additem />);
         const handleSubmit = sinon.spy()
