@@ -17,17 +17,17 @@ describe('<Items/>', () => {
         }
     };
 
-    const wrapper = shallow( <Items {...props}/> );
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <Items {...props}/>);
         const tree = component.toJSON()
-       
         expect(tree).toMatchSnapshot();
     });
     it('renders without crashing', () => {
         shallow(<Items {...props}/>);
     });
+    const wrapper = shallow( <Items {...props}/> );
+    
     it('renders without crashing', () => {
         expect(wrapper).toMatchSnapshot();
     });
@@ -42,6 +42,12 @@ describe('<Items/>', () => {
     });
     it('should render <table> without throwing an error', () => {
         expect(wrapper.exists(<table className="table table-hover table-striped"/>))
+    });
+    it('should render <i> without throwing an error', () => {
+        expect(wrapper.exists(<i className="fa"  />)).toBe(true)
+    });
+    it('should render <form> without throwing an error', () => {
+        expect(wrapper.exists(<form className="form-inline"  />)).toBe(true)
     });
     it('should render <thead> without throwing an error', () => {
         expect(wrapper.exists(<thead/>))
