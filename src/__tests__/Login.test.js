@@ -7,13 +7,14 @@ import Login from '../components/login'
 import moxios from 'moxios'
 import sinon from 'sinon';
 import {MemoryRouter} from 'react-router-dom'
-import '../setupTests';
 
 describe('<Login/>', () => {
+   
     const wrapper = shallow( <Login/> );
 
     it('renders without crashing', () => {
     shallow(<Login />);
+    expect(wrapper).toMatchSnapshot();
     });
     it('has a valid snapshot', () => {
         const component = renderer.create(
@@ -21,9 +22,7 @@ describe('<Login/>', () => {
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
-    it('renders without crashing', () => {
-        expect(wrapper).toMatchSnapshot();
-    });
+   
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div className="login"/>))
     });
@@ -57,21 +56,21 @@ describe('<Login/>', () => {
     it('should render label without throwing an error', () => {
         expect(wrapper.exists(<label className="login-field-icon fui-lock"/>))
     });
-
-    // it('should log in user without throwing an error', () => {
-    //     beforeEach(function () {
-    //         moxios.install()
-    //     });
-    //     afterEach(function () {
-    //         moxios.uninstall()
-    //     });
-
-    //     sinon.spy(Login.prototype, 'handleSubmit');
-    //     const wrapper = shallow(<Login />);
-    //     wrapper.setState({ email: 'admin@gmail.com', password: 'baron12345' })
-    //     const Form = wrapper.find('form')
-
-    //     Form.simulate('submit', { preventDefault() { } })
-    //     expect(Login.prototype.handleLogin.calledOnce).toEqual(true)
-    // });
+    it('should render form inputs', () => {
+        expect(wrapper.find('#email').length).toEqual(1);
+        expect(wrapper.find('#password').length).toEqual(1);
+    });
+    it('input should respond to change event and change the state', () => {
+        wrapper.find('#email').simulate('change', { target: { name: 'email', value: 'admin@gmail.com' } });
+        expect(wrapper.state('email')).toEqual('admin@gmail.com')
+    });
+    it('input should respond to change event and change the state', () => {
+        wrapper.find('#password').simulate('change', { target: { name: 'password', value: 'baron1234' } });
+        expect(wrapper.state('password')).toEqual('baron1234')
+    });
+    it('renders login form and submits data', () =>{
+        wrapper.find("#login_form").simulate('submit', {preventDefault(){}});
+        expect(toJson(wrapper)).toMatchSnapshot();
+    });
+ 
 });
