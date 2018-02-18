@@ -50,7 +50,7 @@ class Addlist extends Component {
               </div>
 
               <div className="modal-body">
-                <form method="POST" name="login_form" className="register-form" onSubmit={this.handleSubmit}>
+                <form method="POST" id="login_form" name="login_form" className="register-form" onSubmit={this.handleSubmit}>
                   <div className="form-group">
                     SHOPPING LIST NAME:
                   <input type="text" className="form-control" id="list" name="list" onChange={this.handleChange} value={this.state.name} required />
