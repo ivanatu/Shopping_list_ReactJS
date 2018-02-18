@@ -5,14 +5,15 @@ import renderer from 'react-test-renderer'
 import List from '../components/lists'
 import Addlist from '../components/addlist'
 import EditList from '../components/editlist'
+import sinon from 'sinon';
 import '../setupTests';
-
 
 
 describe('<List/>', () => {
     
-    const wrapper = shallow( <List/> );
-    
+    const wrapper = mount( <List/> );
+
+
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <List/>);
@@ -21,6 +22,12 @@ describe('<List/>', () => {
     });
     it('renders without crashing', () => {
         shallow(<List/>);
+        expect(wrapper).toMatchSnapshot();
+    });
+    it('calls componentWillMount', () => {
+        sinon.spy(List.prototype, 'componentDidMount');
+        const wrapper = mount(<List />);
+        expect(List.prototype.componentDidMount.calledOnce).toBe(true);
     });
     it('renders the Items class', () => {
         expect(wrapper.find(".List")).toHaveLength(0);
@@ -35,10 +42,10 @@ describe('<List/>', () => {
         expect(wrapper.exists(<i className="fa fa-bars"  />)).toBe(true)
     });
     it('renders three div jsx elements', () => {
-        expect(wrapper.find("div")).toHaveLength(3);        
+        expect(wrapper.find("div")).toHaveLength(10);        
     });
     it('should render a button', () =>{
-        expect(wrapper.find('button').length).toEqual(2)
+        expect(wrapper.find('button').length).toEqual(4)
     });
     it('should render <table> without throwing an error', () => {
         expect(wrapper.exists(<table className="table table-hover table-striped"/>))
