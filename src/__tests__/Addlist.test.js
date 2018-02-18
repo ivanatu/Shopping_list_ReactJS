@@ -5,11 +5,12 @@ import renderer from 'react-test-renderer'
 import Addlist from '../components/addlist'
 import moxios from 'moxios';
 import sinon from 'sinon';
+import toJson from 'enzyme-to-json';
 import '../setupTests';
 
 
 describe('<Addlist/>', () => {
-    const wrapper = shallow( <Addlist/> );
+    const wrapper = mount( <Addlist/> );
 
     it('has a valid snapshot', () => {
         const component = renderer.create(
@@ -18,7 +19,8 @@ describe('<Addlist/>', () => {
         expect(tree).toMatchSnapshot();
     });
     it('renders without crashing', () => {
-        shallow(<Addlist/>);
+        render(<Addlist/>);
+        expect(wrapper).toMatchSnapshot();
     });
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div id="myModal"/>))
@@ -45,5 +47,10 @@ describe('<Addlist/>', () => {
     it('render the inputs', () =>{
         expect(wrapper.find('form').length).toEqual(1);
         expect(wrapper.find('input').length).toEqual(1)
+    });
+    it('renders the add list form and submits data', () =>{
+        wrapper.setState({list:'groceries'});
+        wrapper.find("#login_form").simulate('submit', {preventDefault(){}});
+        expect(toJson(wrapper)).toMatchSnapshot();
     });
 });
