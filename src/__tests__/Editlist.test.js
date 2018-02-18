@@ -11,7 +11,8 @@ describe('<Editlist/>', () => {
     const wrapper = shallow( <Editlist/> );
 
     it('renders without crashing', () => {
-    shallow(<Editlist/>);
+    render(<Editlist/>);
+    expect(wrapper).toMatchSnapshot();
     });
     it('has a valid snapshot', () => {
         const component = renderer.create(
