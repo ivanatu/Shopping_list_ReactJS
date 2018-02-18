@@ -67,7 +67,7 @@ exports[`<Items/> has a valid snapshot 1`] = `
                 PRICE:
                 <input
                   className="form-control"
-                  id="name"
+                  id="price"
                   name="price"
                   onChange={[Function]}
                   required={true}

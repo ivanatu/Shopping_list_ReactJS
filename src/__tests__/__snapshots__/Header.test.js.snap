@@ -47,7 +47,7 @@ exports[`<Header/> has a valid snapshot 1`] = `
 </div>
 `;
 
-exports[`<Header/> renders with a snapshot 1`] = `
+exports[`<Header/> renders without crashing 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

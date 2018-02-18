@@ -19,6 +19,7 @@ exports[`<Login/> has a valid snapshot 1`] = `
     >
       <form
         className="register-form"
+        id="login_form"
         method="POST"
         name="login_form"
         onSubmit={[Function]}
@@ -28,10 +29,13 @@ exports[`<Login/> has a valid snapshot 1`] = `
         >
           <input
             className="login-field"
+            id="email"
             name="email"
+            onChange={[Function]}
             placeholder="email"
             required={true}
             type="text"
+            value=""
           />
           <label
             className="login-field-icon fui-user"
@@ -43,10 +47,13 @@ exports[`<Login/> has a valid snapshot 1`] = `
         >
           <input
             className="login-field"
+            id="password"
             name="password"
+            onChange={[Function]}
             placeholder="password"
             required={true}
             type="password"
+            value=""
           />
           <label
             className="login-field-icon fui-lock"
@@ -66,6 +73,84 @@ exports[`<Login/> has a valid snapshot 1`] = `
       >
          Register new Account
       </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Login/> renders login form and submits data 1`] = `
+<div
+  className="login"
+>
+  <div
+    className="login-screen"
+  >
+    <div
+      className="app-title"
+    >
+      <h1>
+        Login
+      </h1>
+    </div>
+    <div
+      className="login-form"
+    >
+      <form
+        className="register-form"
+        id="login_form"
+        method="POST"
+        name="login_form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="control-group"
+        >
+          <input
+            className="login-field"
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="email"
+            required={true}
+            type="text"
+            value="admin@gmail.com"
+          />
+          <label
+            className="login-field-icon fui-user"
+            htmlFor="login-name"
+          />
+        </div>
+        <div
+          className="control-group"
+        >
+          <input
+            className="login-field"
+            id="password"
+            name="password"
+            onChange={[Function]}
+            placeholder="password"
+            required={true}
+            type="password"
+            value="baron1234"
+          />
+          <label
+            className="login-field-icon fui-lock"
+            htmlFor="login-pass"
+          />
+        </div>
+        <button
+          className="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+      <Link
+        replace={false}
+        to="/register"
+      >
+         Register new Account
+      </Link>
     </div>
   </div>
 </div>
@@ -103,6 +188,7 @@ ShallowWrapper {
         >
           <form
             className="register-form"
+            id="login_form"
             method="POST"
             name="login_form"
             onSubmit={[Function]}
@@ -112,10 +198,13 @@ ShallowWrapper {
             >
               <input
                 className="login-field"
+                id="email"
                 name="email"
+                onChange={[Function]}
                 placeholder="email"
                 required={true}
                 type="text"
+                value=""
               />
               <label
                 className="login-field-icon fui-user"
@@ -127,10 +216,13 @@ ShallowWrapper {
             >
               <input
                 className="login-field"
+                id="password"
                 name="password"
+                onChange={[Function]}
                 placeholder="password"
                 required={true}
                 type="password"
+                value=""
               />
               <label
                 className="login-field-icon fui-lock"
@@ -173,6 +265,7 @@ ShallowWrapper {
           >
             <form
               className="register-form"
+              id="login_form"
               method="POST"
               name="login_form"
               onSubmit={[Function]}
@@ -182,10 +275,13 @@ ShallowWrapper {
               >
                 <input
                   className="login-field"
+                  id="email"
                   name="email"
+                  onChange={[Function]}
                   placeholder="email"
                   required={true}
                   type="text"
+                  value=""
                 />
                 <label
                   className="login-field-icon fui-user"
@@ -197,10 +293,13 @@ ShallowWrapper {
               >
                 <input
                   className="login-field"
+                  id="password"
                   name="password"
+                  onChange={[Function]}
                   placeholder="password"
                   required={true}
                   type="password"
+                  value=""
                 />
                 <label
                   className="login-field-icon fui-lock"
@@ -258,6 +357,7 @@ ShallowWrapper {
             "children": Array [
               <form
                 className="register-form"
+                id="login_form"
                 method="POST"
                 name="login_form"
                 onSubmit={[Function]}
@@ -267,10 +367,13 @@ ShallowWrapper {
                 >
                   <input
                     className="login-field"
+                    id="email"
                     name="email"
+                    onChange={[Function]}
                     placeholder="email"
                     required={true}
                     type="text"
+                    value=""
                   />
                   <label
                     className="login-field-icon fui-user"
@@ -282,10 +385,13 @@ ShallowWrapper {
                 >
                   <input
                     className="login-field"
+                    id="password"
                     name="password"
+                    onChange={[Function]}
                     placeholder="password"
                     required={true}
                     type="password"
+                    value=""
                   />
                   <label
                     className="login-field-icon fui-lock"
@@ -321,10 +427,13 @@ ShallowWrapper {
                   >
                     <input
                       className="login-field"
+                      id="email"
                       name="email"
+                      onChange={[Function]}
                       placeholder="email"
                       required={true}
                       type="text"
+                      value=""
                     />
                     <label
                       className="login-field-icon fui-user"
@@ -336,10 +445,13 @@ ShallowWrapper {
                   >
                     <input
                       className="login-field"
+                      id="password"
                       name="password"
+                      onChange={[Function]}
                       placeholder="password"
                       required={true}
                       type="password"
+                      value=""
                     />
                     <label
                       className="login-field-icon fui-lock"
@@ -354,6 +466,7 @@ ShallowWrapper {
                   </button>,
                 ],
                 "className": "register-form",
+                "id": "login_form",
                 "method": "POST",
                 "name": "login_form",
                 "onSubmit": [Function],
@@ -368,10 +481,13 @@ ShallowWrapper {
                     "children": Array [
                       <input
                         className="login-field"
+                        id="email"
                         name="email"
+                        onChange={[Function]}
                         placeholder="email"
                         required={true}
                         type="text"
+                        value=""
                       />,
                       <label
                         className="login-field-icon fui-user"
@@ -388,10 +504,13 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "className": "login-field",
+                        "id": "email",
                         "name": "email",
+                        "onChange": [Function],
                         "placeholder": "email",
                         "required": true,
                         "type": "text",
+                        "value": "",
                       },
                       "ref": null,
                       "rendered": null,
@@ -420,10 +539,13 @@ ShallowWrapper {
                     "children": Array [
                       <input
                         className="login-field"
+                        id="password"
                         name="password"
+                        onChange={[Function]}
                         placeholder="password"
                         required={true}
                         type="password"
+                        value=""
                       />,
                       <label
                         className="login-field-icon fui-lock"
@@ -440,10 +562,13 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "className": "login-field",
+                        "id": "password",
                         "name": "password",
+                        "onChange": [Function],
                         "placeholder": "password",
                         "required": true,
                         "type": "password",
+                        "value": "",
                       },
                       "ref": null,
                       "rendered": null,
@@ -522,6 +647,7 @@ ShallowWrapper {
           >
             <form
               className="register-form"
+              id="login_form"
               method="POST"
               name="login_form"
               onSubmit={[Function]}
@@ -531,10 +657,13 @@ ShallowWrapper {
               >
                 <input
                   className="login-field"
+                  id="email"
                   name="email"
+                  onChange={[Function]}
                   placeholder="email"
                   required={true}
                   type="text"
+                  value=""
                 />
                 <label
                   className="login-field-icon fui-user"
@@ -546,10 +675,13 @@ ShallowWrapper {
               >
                 <input
                   className="login-field"
+                  id="password"
                   name="password"
+                  onChange={[Function]}
                   placeholder="password"
                   required={true}
                   type="password"
+                  value=""
                 />
                 <label
                   className="login-field-icon fui-lock"
@@ -592,6 +724,7 @@ ShallowWrapper {
             >
               <form
                 className="register-form"
+                id="login_form"
                 method="POST"
                 name="login_form"
                 onSubmit={[Function]}
@@ -601,10 +734,13 @@ ShallowWrapper {
                 >
                   <input
                     className="login-field"
+                    id="email"
                     name="email"
+                    onChange={[Function]}
                     placeholder="email"
                     required={true}
                     type="text"
+                    value=""
                   />
                   <label
                     className="login-field-icon fui-user"
@@ -616,10 +752,13 @@ ShallowWrapper {
                 >
                   <input
                     className="login-field"
+                    id="password"
                     name="password"
+                    onChange={[Function]}
                     placeholder="password"
                     required={true}
                     type="password"
+                    value=""
                   />
                   <label
                     className="login-field-icon fui-lock"
@@ -677,6 +816,7 @@ ShallowWrapper {
               "children": Array [
                 <form
                   className="register-form"
+                  id="login_form"
                   method="POST"
                   name="login_form"
                   onSubmit={[Function]}
@@ -686,10 +826,13 @@ ShallowWrapper {
                   >
                     <input
                       className="login-field"
+                      id="email"
                       name="email"
+                      onChange={[Function]}
                       placeholder="email"
                       required={true}
                       type="text"
+                      value=""
                     />
                     <label
                       className="login-field-icon fui-user"
@@ -701,10 +844,13 @@ ShallowWrapper {
                   >
                     <input
                       className="login-field"
+                      id="password"
                       name="password"
+                      onChange={[Function]}
                       placeholder="password"
                       required={true}
                       type="password"
+                      value=""
                     />
                     <label
                       className="login-field-icon fui-lock"
@@ -740,10 +886,13 @@ ShallowWrapper {
                     >
                       <input
                         className="login-field"
+                        id="email"
                         name="email"
+                        onChange={[Function]}
                         placeholder="email"
                         required={true}
                         type="text"
+                        value=""
                       />
                       <label
                         className="login-field-icon fui-user"
@@ -755,10 +904,13 @@ ShallowWrapper {
                     >
                       <input
                         className="login-field"
+                        id="password"
                         name="password"
+                        onChange={[Function]}
                         placeholder="password"
                         required={true}
                         type="password"
+                        value=""
                       />
                       <label
                         className="login-field-icon fui-lock"
@@ -773,6 +925,7 @@ ShallowWrapper {
                     </button>,
                   ],
                   "className": "register-form",
+                  "id": "login_form",
                   "method": "POST",
                   "name": "login_form",
                   "onSubmit": [Function],
@@ -787,10 +940,13 @@ ShallowWrapper {
                       "children": Array [
                         <input
                           className="login-field"
+                          id="email"
                           name="email"
+                          onChange={[Function]}
                           placeholder="email"
                           required={true}
                           type="text"
+                          value=""
                         />,
                         <label
                           className="login-field-icon fui-user"
@@ -807,10 +963,13 @@ ShallowWrapper {
                         "nodeType": "host",
                         "props": Object {
                           "className": "login-field",
+                          "id": "email",
                           "name": "email",
+                          "onChange": [Function],
                           "placeholder": "email",
                           "required": true,
                           "type": "text",
+                          "value": "",
                         },
                         "ref": null,
                         "rendered": null,
@@ -839,10 +998,13 @@ ShallowWrapper {
                       "children": Array [
                         <input
                           className="login-field"
+                          id="password"
                           name="password"
+                          onChange={[Function]}
                           placeholder="password"
                           required={true}
                           type="password"
+                          value=""
                         />,
                         <label
                           className="login-field-icon fui-lock"
@@ -859,10 +1021,13 @@ ShallowWrapper {
                         "nodeType": "host",
                         "props": Object {
                           "className": "login-field",
+                          "id": "password",
                           "name": "password",
+                          "onChange": [Function],
                           "placeholder": "password",
                           "required": true,
                           "type": "password",
+                          "value": "",
                         },
                         "ref": null,
                         "rendered": null,
