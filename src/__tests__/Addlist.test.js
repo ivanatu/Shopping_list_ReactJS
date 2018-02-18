@@ -7,8 +7,10 @@ import moxios from 'moxios';
 import sinon from 'sinon';
 import '../setupTests';
 
+
 describe('<Addlist/>', () => {
     const wrapper = shallow( <Addlist/> );
+
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <Addlist />);
@@ -43,25 +45,5 @@ describe('<Addlist/>', () => {
     it('render the inputs', () =>{
         expect(wrapper.find('form').length).toEqual(1);
         expect(wrapper.find('input').length).toEqual(1)
-    });
-});
-
-describe('add list successfully', () => {
-    beforeEach(function () {
-        moxios.install()
-    })
-    afterEach(function () {
-        moxios.uninstall()
-    })
-
-    it('should add shopping item without throwing an error', () => {
-        const wrapper = shallow(<Addlist />);
-        const handleSubmit = sinon.spy()
-        // sinon.spy(Additem.prototype, 'handleSubmit');
-        wrapper.setState({ list: 'Coffee' })
-        const Form = wrapper.find('form')
-
-        Form.simulate('submit', { preventDefault() { } })
-        expect(handleSubmit.calledOnce).toEqual(false)
     });
 });
