@@ -6,16 +6,18 @@ import Editlist from '../components/editlist'
 import toJson from 'enzyme-to-json';
 import '../setupTests';
 
+
 describe('<Editlist/>', () => {
     const wrapper = shallow( <Editlist/> );
+
+    it('renders without crashing', () => {
+    shallow(<Editlist/>);
+    });
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <Editlist />);
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
-    });
-    it('renders without crashing', () => {
-        shallow(<Editlist/>);
     });
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div className="modal"/>))
@@ -50,16 +52,6 @@ describe('<Editlist/>', () => {
         wrapper.setState({list:'groceries'});
         wrapper.find("#editlist").simulate('submit', {preventDefault(){}});
         expect(toJson(wrapper)).toMatchSnapshot();
-        // const mockCallback = jest.fn(preventDefault);
-        // expect(mockCallback).toBeCalled();
-
-
-        // const handleSubmit = sinon.spy()
-        // // sinon.spy(Additem.prototype, 'handleSubmit');
-        // wrapper.setState({ list:'groceries'});
-        // const Form = wrapper.find('#editlist')
-
-        // Form.simulate('submit', { preventDefault })
         // expect(handleSubmit.calledOnce).toEqual(false)
     });
     
