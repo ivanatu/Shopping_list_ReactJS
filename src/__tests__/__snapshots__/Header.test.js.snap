@@ -1,5 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Header/> has a valid snapshot 1`] = `
+<div>
+  <nav
+    className="navbar navbar-inverse fixed-top bg-faded navbar-toggleable-sm "
+  >
+    <div
+      className="container"
+    >
+      <h1
+        className="navbar-brand m-o align-content-end mr-auto"
+      >
+        WELCOME TO YOUR SHOPPING LIST
+      </h1>
+      <div
+        className="navbar-nav "
+      >
+        <div>
+          <ul>
+            <div>
+              <a
+                href="/login"
+                onClick={[Function]}
+              >
+                <i
+                  className="fa fa-sign-in"
+                />
+                  Login   
+              </a>
+              <a
+                href="/register"
+                onClick={[Function]}
+              >
+                <i
+                  className="fa fa-sign-in"
+                />
+                   Register  
+              </a>
+            </div>
+          </ul>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
 exports[`<Header/> renders with a snapshot 1`] = `
 ShallowWrapper {
   "length": 1,

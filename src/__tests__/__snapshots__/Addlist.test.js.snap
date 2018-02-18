@@ -33,6 +33,7 @@ exports[`<Addlist/> has a valid snapshot 1`] = `
         >
           <form
             className="register-form"
+            id="login_form"
             method="POST"
             name="login_form"
             onSubmit={[Function]}

@@ -1,5 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Login/> has a valid snapshot 1`] = `
+<div
+  className="login"
+>
+  <div
+    className="login-screen"
+  >
+    <div
+      className="app-title"
+    >
+      <h1>
+        Login
+      </h1>
+    </div>
+    <div
+      className="login-form"
+    >
+      <form
+        className="register-form"
+        method="POST"
+        name="login_form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="control-group"
+        >
+          <input
+            className="login-field"
+            name="email"
+            placeholder="email"
+            required={true}
+            type="text"
+          />
+          <label
+            className="login-field-icon fui-user"
+            htmlFor="login-name"
+          />
+        </div>
+        <div
+          className="control-group"
+        >
+          <input
+            className="login-field"
+            name="password"
+            placeholder="password"
+            required={true}
+            type="password"
+          />
+          <label
+            className="login-field-icon fui-lock"
+            htmlFor="login-pass"
+          />
+        </div>
+        <button
+          className="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+      <a
+        href="/register"
+        onClick={[Function]}
+      >
+         Register new Account
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Login/> renders without crashing 1`] = `
 ShallowWrapper {
   "length": 1,
