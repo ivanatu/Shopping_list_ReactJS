@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import axios from 'axios';
-import Items from './items';
 import {notify} from 'react-notify-toast';
 
 
@@ -72,7 +71,7 @@ render(){
   
                       <div className="form-group">
                           PRICE:
-                              <input type="text" className="form-control" id="name" name="price" onChange={this.handleChange} value={this.state.price}  required/>
+                              <input type="text" className="form-control" id="price" name="price" onChange={this.handleChange} value={this.state.price}  required/>
                       </div>
                               <button className="btn btn-info " type="submit">Save Item</button>               
                     </form>
