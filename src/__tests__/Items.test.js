@@ -37,10 +37,6 @@ describe('<Items/>', () => {
         const tree = component.toJSON()
         expect(tree).toMatchSnapshot();
     });
-    // it('renders without crashing', () => {
-    //     render(<Items {...props}/>);
-    //     expect(wrapper).toMatchSnapshot();
-    // });
     it('calls componentWillMount', () => {
         sinon.spy(Items.prototype, 'componentDidMount');
         const wrapper = mount(<Items {...props}/>);
