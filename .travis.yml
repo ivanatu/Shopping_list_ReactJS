@@ -8,6 +8,6 @@ cache:
 
 # command to run tests
 script:
-  - npm test -- --coverage
+  - npm test -- -u --coverage
 after_script: # Upload coverage reports
   - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
