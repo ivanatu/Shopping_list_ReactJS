@@ -6,6 +6,17 @@ import Register from '../components/register'
 
 
 describe('<Register/>', () => {
+
+    const event={
+        target:{
+            value:{},
+            password:"",
+            c_password:""
+        },
+        preventDefault: () => {
+
+        }
+    }
     const wrapper = shallow( <Register/> );
 
     it('renders without crashing', () => {
@@ -70,5 +81,9 @@ describe('<Register/>', () => {
         wrapper.find('#c_password').simulate('change', { target: { name: 'c_password', value: 'baron1234' } });
         expect(wrapper.state('c_password')).toEqual('baron1234')
     });
+    it('handles submit', () => {
+        const wrapper = mount(<Register />); 
+        wrapper.instance().handleSubmit(event)
+    })
    
 });
