@@ -146,7 +146,6 @@ class Items extends Component{
     };
 
     handleClicks = (event, numbers) => {
-        console.log("i tried this ");
           event.preventDefault();
           const {match: {params}} = this.props;
           const listId = params.listId;
@@ -173,7 +172,7 @@ class Items extends Component{
     
     //this renders the component and also handles the pagination
      render () {
-            console.log(this.state);
+            // console.log(this.state);
             // const {match: {params}} = this.props;
             const listId = this.props.match.params.listId;
             const listName = this.props.match.params.listName;
