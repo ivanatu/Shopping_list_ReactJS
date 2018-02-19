@@ -112,8 +112,6 @@ class List extends Component{
     }
 
     handleClick(number){
-        // if (this.state.next_page)
-        console.log("i tried this and it worked ");
         axios.get(`/shoppinglists?page=${number}`, {
             headers: { 'Authorization': localStorage.getItem("TK") }
         })
@@ -134,7 +132,6 @@ class List extends Component{
     };
 
     handleClicks = (event, numbers) => {
-        console.log("i tried this ");
           event.preventDefault();
           const search = this.state.searched
         
@@ -158,8 +155,7 @@ class List extends Component{
     };
 
     render () {
-        
-        // console.log(this.state.per_page);
+    
         const { per_page, total}=this.state
         let loadPagination;
         const pageNumbers = [];
@@ -245,8 +241,6 @@ class List extends Component{
         this.props.history.push(`/${listName}/${listId}/items`)
     }
     
-    
-
 }
 
 export default List;
