@@ -12,7 +12,6 @@ describe('<Editlist/>', () => {
 
     it('renders without crashing', () => {
     render(<Editlist/>);
-    expect(wrapper).toMatchSnapshot();
     });
     it('has a valid snapshot', () => {
         const component = renderer.create(
