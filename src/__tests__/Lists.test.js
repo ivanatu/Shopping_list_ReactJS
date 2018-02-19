@@ -6,10 +6,20 @@ import List from '../components/lists'
 import Addlist from '../components/addlist'
 import EditList from '../components/editlist'
 import sinon from 'sinon';
-import '../setupTests';
 
 
 describe('<List/>', () => {
+    const event={
+        target:{
+            value:{}
+        },
+        preventDefault: () => {
+
+        },
+        push: (event) =>{
+
+        }
+    }
     
     const wrapper = mount( <List/> );
 
@@ -20,10 +30,6 @@ describe('<List/>', () => {
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
-    it('renders without crashing', () => {
-        shallow(<List/>);
-        expect(wrapper).toMatchSnapshot();
-    });
     it('calls componentWillMount', () => {
         sinon.spy(List.prototype, 'componentDidMount');
         const wrapper = mount(<List />);
@@ -33,13 +39,7 @@ describe('<List/>', () => {
         expect(wrapper.find(".List")).toHaveLength(0);
     });
     it('should render <i> without throwing an error', () => {
-        expect(wrapper.exists(<i className="fa fa-edit"  />)).toBe(true)
-    });
-    it('should render <i> without throwing an error', () => {
-        expect(wrapper.exists(<i className="fa fa-trash"  />)).toBe(true)
-    });
-    it('should render <i> without throwing an error', () => {
-        expect(wrapper.exists(<i className="fa fa-bars"  />)).toBe(true)
+        expect(wrapper.exists(<i className="fa"  />)).toBe(true)
     });
     it('renders three div jsx elements', () => {
         expect(wrapper.find("div")).toHaveLength(10);        
@@ -64,6 +64,30 @@ describe('<List/>', () => {
     });
     it('should render <ul> without throwing an error', () => {
         expect(wrapper.exists(<ul className="pagination justify-content-center"/>))
+    });
+    it('delete category', () => {
+        const wrapper = shallow(<List/>); 
+        wrapper.instance().onDeleteClick(event)
+    });
+    it('list delete category', () => {
+        const wrapper = shallow(<List/>); 
+        wrapper.instance().onListDelete(event)
+    });
+    it('component did mount', () => {
+        const wrapper = shallow(<List/>); 
+        wrapper.instance().componentDidMount()
+    });
+    it('fetch list', () => {
+        const wrapper = shallow(<List/>); 
+        wrapper.instance().fetchLists()
+    });
+    it('handle click', () => {
+        const wrapper = shallow(<List/>); 
+        wrapper.instance().handleClick()
+    });
+    it('handle clicks', () => {
+        const wrapper = shallow(<List/>); 
+        wrapper.instance().handleClicks(event)
     });
     
 });
