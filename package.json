@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0-beta.3",
+    "coveralls": "^3.0.0",
     "jest-cli": "^22.3.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
@@ -33,7 +34,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "react-scripts test --env=jsdom --coverage",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
