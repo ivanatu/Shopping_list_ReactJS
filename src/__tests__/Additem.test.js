@@ -12,10 +12,6 @@ import '../setupTests';
 describe('<Additem/>', () => {
     const wrapper = mount( <Additem/> );
 
-    it('renders without crashing', () => {
-        render(<Additem/>);
-        expect(wrapper).toMatchSnapshot();
-    });
     it('has a valid snapshot', () => {
         const component = renderer.create(
         <Additem />);
