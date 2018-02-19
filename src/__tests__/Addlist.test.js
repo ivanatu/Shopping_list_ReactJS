@@ -18,10 +18,7 @@ describe('<Addlist/>', () => {
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
-    it('renders without crashing', () => {
-        render(<Addlist/>);
-        expect(wrapper).toMatchSnapshot();
-    });
+   
     it('should render <div> without throwing an error', () => {
         expect(wrapper.exists(<div id="myModal"/>))
     });
