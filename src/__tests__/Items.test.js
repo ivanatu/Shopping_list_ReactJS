@@ -17,6 +17,18 @@ describe('<Items/>', () => {
             }
         }
     };
+
+    const event={
+        target:{
+            value:{}
+        },
+        preventDefault: () => {
+
+        },
+        push: (event) =>{
+
+        }
+    }
    
     const wrapper = shallow( <Items {...props}/> );
     it('has a valid snapshot', () => {
@@ -25,10 +37,10 @@ describe('<Items/>', () => {
         const tree = component.toJSON()
         expect(tree).toMatchSnapshot();
     });
-    it('renders without crashing', () => {
-        render(<Items {...props}/>);
-        expect(wrapper).toMatchSnapshot();
-    });
+    // it('renders without crashing', () => {
+    //     render(<Items {...props}/>);
+    //     expect(wrapper).toMatchSnapshot();
+    // });
     it('calls componentWillMount', () => {
         sinon.spy(Items.prototype, 'componentDidMount');
         const wrapper = mount(<Items {...props}/>);
@@ -69,6 +81,30 @@ describe('<Items/>', () => {
     });
     it('should render <ul> without throwing an error', () => {
         expect(wrapper.exists(<ul className="pagination justify-content-center"/>))
+    });
+    it('delete category', () => {
+        const wrapper = shallow(<Items {...props}/>); 
+        wrapper.instance().onDeleteClick(event)
+    });
+    it('list delete category', () => {
+        const wrapper = shallow(<Items {...props}/>); 
+        wrapper.instance().onListDelete(event)
+    });
+    it('component did mount', () => {
+        const wrapper = shallow(<Items {...props}/>); 
+        wrapper.instance().componentDidMount()
+    });
+    it('fetch list', () => {
+        const wrapper = shallow(<Items {...props}/>); 
+        wrapper.instance().fetchItems()
+    });
+    it('handle click', () => {
+        const wrapper = shallow(<Items {...props}/>); 
+        wrapper.instance().handleClick()
+    });
+    it('handle clicks', () => {
+        const wrapper = shallow(<Items {...props}/>); 
+        wrapper.instance().handleClicks(event)
     });
     
 });
