@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List/> has a valid snapshot 1`] = `
+<div>
+  <button
+    className="btn btn-success"
+    data-target="#myModal"
+    data-toggle="modal"
+    type="button"
+  >
+    Add List
+  </button>
+  <div>
+    <div
+      className="modal"
+      id="myModal"
+      role="dialog"
+    >
+      <div
+        className="modal-dialog"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h4>
+              Add List
+            </h4>
+            <button
+              className="close"
+              data-dismiss="modal"
+              id="close2"
+              type="button"
+            >
+              ×
+            </button>
+          </div>
+          <div
+            className="modal-body"
+          >
+            <form
+              className="register-form"
+              id="login_form"
+              method="POST"
+              name="login_form"
+              onSubmit={[Function]}
+            >
+              <div
+                className="form-group"
+              >
+                SHOPPING LIST NAME:
+                <input
+                  className="form-control"
+                  id="list"
+                  name="list"
+                  onChange={[Function]}
+                  required={true}
+                  type="text"
+                  value=""
+                />
+              </div>
+              <button
+                className="btn btn-info "
+                type="submit"
+              >
+                Save List
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-inline align-content"
+  >
+    <form
+      className="form-inline align-content"
+      onSubmit={[Function]}
+    >
+      <input
+        aria-label="Search"
+        className="form-control mr-sm-2"
+        name="search"
+        placeholder="Search"
+        required={true}
+        type="search"
+      />
+      <button
+        type="submit"
+      >
+        <i
+          className="fa fa-search"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    className="container"
+  >
+    <table
+      className="table table-hover table-striped"
+    >
+      <thead>
+        <tr>
+          <th
+            colSpan="2"
+          >
+            SHOPPING LIST
+          </th>
+          <th
+            colSpan="10"
+          >
+            ACTION
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+    <ul
+      className="pagination justify-content-center"
+    >
+      <li
+        className="page-item"
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        <a
+          className="page-link"
+          id={1}
+          onClick={[Function]}
+        >
+          1
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

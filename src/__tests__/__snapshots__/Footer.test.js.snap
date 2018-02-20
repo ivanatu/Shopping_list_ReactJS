@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/> has a valid snapshot 1`] = `
+<div>
+  <footer
+    className="fixed-bottom"
+  >
+    <div
+      className="container"
+    >
+      <span
+        className="navbar-text ml-auto"
+      >
+        © Shopping List Inc All rights reserved
+      </span>
+    </div>
+  </footer>
+</div>
+`;
