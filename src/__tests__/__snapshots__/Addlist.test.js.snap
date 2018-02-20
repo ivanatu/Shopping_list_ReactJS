@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Addlist/> has a valid snapshot 1`] = `
+<div>
+  <div
+    className="modal"
+    id="myModal"
+    role="dialog"
+  >
+    <div
+      className="modal-dialog"
+    >
+      <div
+        className="modal-content"
+      >
+        <div
+          className="modal-header"
+        >
+          <h4>
+            Add List
+          </h4>
+          <button
+            className="close"
+            data-dismiss="modal"
+            id="close2"
+            type="button"
+          >
+            ×
+          </button>
+        </div>
+        <div
+          className="modal-body"
+        >
+          <form
+            className="register-form"
+            id="login_form"
+            method="POST"
+            name="login_form"
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group"
+            >
+              SHOPPING LIST NAME:
+              <input
+                className="form-control"
+                id="list"
+                name="list"
+                onChange={[Function]}
+                required={true}
+                type="text"
+                value=""
+              />
+            </div>
+            <button
+              className="btn btn-info "
+              type="submit"
+            >
+              Save List
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Addlist/> renders the add list form and submits data 1`] = `
+<Addlist>
+  <div>
+    <div
+      className="modal"
+      id="myModal"
+      role="dialog"
+    >
+      <div
+        className="modal-dialog"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h4>
+              Add List
+            </h4>
+            <button
+              className="close"
+              data-dismiss="modal"
+              id="close2"
+              type="button"
+            >
+              ×
+            </button>
+          </div>
+          <div
+            className="modal-body"
+          >
+            <form
+              className="register-form"
+              id="login_form"
+              method="POST"
+              name="login_form"
+              onSubmit={[Function]}
+            >
+              <div
+                className="form-group"
+              >
+                SHOPPING LIST NAME:
+                <input
+                  className="form-control"
+                  id="list"
+                  name="list"
+                  onChange={[Function]}
+                  required={true}
+                  type="text"
+                  value="mangoes"
+                />
+              </div>
+              <button
+                className="btn btn-info "
+                type="submit"
+              >
+                Save List
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Addlist>
+`;
